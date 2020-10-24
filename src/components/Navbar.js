@@ -26,7 +26,7 @@ export default class Navbar extends Component {
                                 <form>
                                     <div className="form-group row">
                                         <div className="col-sm-8 pr-lg-0">
-                                            <input type="text" className="form-control small" name="search" id="search" placeholder="Enter search term (e.g iphone x, 128Gb or A1)" required></input>
+                                            <input type="text" className="form-control small search" name="search" id="search" placeholder="Enter search term (e.g iphone x, 128Gb or A1)" required></input>
                                         </div>
                                         <div className="col-sm-4 pl-lg-0 ">
                                             <button className="btn btn-outline-white btn-md my-0 ml-sm-2 btnsearch small  float-lg-left " type="submit"> Search <i className="fa fa-long-arrow-right" aria-hidden="true"></i> </button>
