@@ -1,0 +1,29 @@
+:root{
+  --mainBlue:#2a2a72;
+  --mainWhite:#f3f3f3;
+  --mainDark:#14161c;
+}
+body{
+  font-family: "neli", sans-serif !important;
+  background: var( --mainDark) !important;
+  color: var(--mainWhite) !important;
+}
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  
+  "filter-category"
+  "products-wrapper";
+  grid-template-columns: 5rem 1fr ;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+}
+
+.products-wrapper {
+  grid-area:products-wrapper;
+}
+.filter-category{
+  grid-area: filter-category;
+  background-color: black;
+}

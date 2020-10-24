@@ -1,0 +1,107 @@
+.main-panel{
+    height:70vh;
+    overflow-y: scroll;
+}
+.side-bar{
+    height:70vh;
+    background-color: #1e242f;
+    overflow-y: scroll;
+}
+
+ #main-panel::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     background-color: #1e242f;
+     z-index: 10px;
+ }
+ 
+ #main-panel::-webkit-scrollbar
+ {
+     width: 8px;
+     background-color: #F5F5F5;
+ }
+ 
+ #main-panel::-webkit-scrollbar-thumb
+ {
+     background-color: #000000;
+     border: 0px solid #555555;
+     border-radius: 6px;
+ }
+ #side-bar::-webkit-scrollbar-track
+ {
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     background-color: #1e242f;
+     z-index: 10px;
+ }
+ 
+ #side-bar::-webkit-scrollbar
+ {
+     width: 8px;
+     background-color: #F5F5F5;
+ }
+ 
+ #side-bar::-webkit-scrollbar-thumb
+ {
+     background-color: #141414;
+     border: 0px solid #555555;
+     border-radius: 6px;
+ }
+
+ .list-group-item{
+     background-color: transparent !important;
+     padding: 0.7rem 1rem 0.7rem 0.5rem;
+     font-size: 0.7rem;
+     border: 0px solid #000 !important;
+ }
+ .input-sm{
+    font-size: 0.6rem;
+    font-weight: bold;
+ }
+ .product-card{
+    background-color: #1e242f;
+ }
+ .phone-status-storage{
+     font-size: 0.8rem;
+     font-weight: lighter !important;
+     color: #b3bac4;
+ }
+ .phone-name{
+    font-size: 1rem;
+}
+.unit-price-label{
+    font-size: 0.6rem !important;
+    color: #b3bac4;
+}
+.price{
+    font-size: 1.4rem !important;
+    font-weight: bold;
+}
+.availability-label{
+    font-size: 0.8rem !important;
+    color: #b3bac4;
+}
+.product-condition{
+    border-color: #53575f !important;
+    border-radius: 3px;
+    color: #b4b6ba;
+}
+.product-image {
+    height: 7rem;
+}
+
+.mobile-filter-button{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:10px;
+	right:10px;
+	background-color:rgb(0, 0, 0);
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+
+}
+
+.mobile-filter-button-icon{
+	margin-top:22px;
+}
