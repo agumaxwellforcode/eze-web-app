@@ -4,7 +4,7 @@ import '../css/filter.css'
 
 export default function Filter() {
     return (
-        <div classNameName='filter-category'>
+        <div className='filter-category'>
            <div className ="title">
                <h2>category</h2>
            </div>

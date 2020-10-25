@@ -1,14 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react';
 import Filter from './Filter'
 import ProductsWrapper from './ProductsWrapper'
 import '../css/main.css';
-import axios from 'axios'
-import StoreItem from './StoreItem'
-
-export default function Main() {
+// import axios from 'axios'
 
 
-    return (
+export default class Main extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            search_value : '',
+            min : '',
+            max : ''
+
+        }
+    }
+
+  handleMinChange = (e) => {
+    console.log(e.target.value);
+    this.setState({
+      min: e.target.value
+    });
+  }
+
+  handleMaxChange = (e) => {
+    console.log(e.target.value);
+    this.setState({
+        max: e.target.value
+    });
+  }
+    render() {
+        return (
         // <>
           
                 <div className="row m-0 main-pane" id="main-pane">
@@ -27,11 +49,11 @@ export default function Main() {
                                     <h6 className="card-title mb-5">Price Filtter</h6>
                                     <form>
                                         <div className="form-group mb-1">
-                                            <input type="text" className="form-control input-sm" id="min" placeholder="Min"/>
+                                            <input type="text" onChange={this.handleMinChange}  className="form-control input-sm" id="min" placeholder="Min"/>
                                         </div>
                                         <p className="h6 text-center">|</p>
                                         <div className="form-group mt-2">
-                                            <input type="text" className="form-control  input-sm" id="max" placeholder="Max"/>
+                                            <input type="text" onChange={this.handleMaxChange}  className="form-control  input-sm" id="max" placeholder="Max"/>
                                         </div>
                                         
                                     </form>
@@ -70,13 +92,14 @@ export default function Main() {
                        <ProductsWrapper />
                        
                        
-                            <a className="mobile-filter-button" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <a className="mobile-filter-button shadow" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 <i className="fa fa-ellipsis-v mobile-filter-button-icon"></i>
                             </a>
-                        
+                  
                        </div>
                     </div>
                    
         // </>
-    )
+        )
+        }
 }
