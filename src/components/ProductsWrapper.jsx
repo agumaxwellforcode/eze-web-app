@@ -11,7 +11,7 @@ function ProductsWrapper(props) {
     if (!dataRetrieved) {
       console.log(dataRetrieved);
       startcall(
-        "http://eze-backend-api.herokuapp.com/api/iphones/buy?page=1&limit=30"
+        "https://eze-backend-api.herokuapp.com/api/iphones/buy?page=1&limit=30"
       );
     }
   });
