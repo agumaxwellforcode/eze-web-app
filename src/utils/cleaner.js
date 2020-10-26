@@ -90,7 +90,7 @@ export function buildUrl(
   let search_params = searchToQueryparams(queryParameters);
   let price_params = priceToQueryParams(priceParameters);
   let url =
-    "https://eze-backend-api.herokuapp.com/api/iphones/buy?page=" +
+    "https://eze-api-2.herokuapp.com/api/iphones/buy?page=" +
     page +
     "&limit=" +
     limit +

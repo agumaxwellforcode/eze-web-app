@@ -6,7 +6,7 @@ import "../css/Navbar.css";
 
 async function loadIphone() {
   await axios
-    .get(`https://eze-backend-api.herokuapp.com/api/iphones/data/trigger`)
+    .get(`https://eze-api-2.herokuapp.com/api/iphones/data/trigger`)
     .then((res) => {
       console.log(res);
     });
