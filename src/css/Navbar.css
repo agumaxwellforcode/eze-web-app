@@ -1,8 +1,12 @@
-/* .header-container{
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem;
-} */
+
+
+#nav {
+    background-image: url('/src/image/screens-Image.png');
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 20em 15em;
+    /* background: orange; */
+}
 .header-container h1{
     text-transform: uppercase;
     line-height: 3.2rem;
@@ -10,7 +14,7 @@
     padding-top: 1rem;
     text-align: left;
     font-weight: bold;
-}
+   }
 .btnsearch {
     background-color: var(--mainBlue);
     color: #ffffff;
