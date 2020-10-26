@@ -6,44 +6,71 @@ import "../css/Navbar.css";
 
 async function loadIphone() {
   await axios
-    .get(`//eze-backend-api.herokuapp.com/api/iphones/data/trigger`)
+    .get(`http://eze-backend-api.herokuapp.com/api/iphones/data/trigger`)
     .then((res) => {
       console.log(res);
     });
 }
 
 export default class Navbar extends Component {
+  constructor(props) {
+    super(props)
+    this.store = props.store;
+    const {
+      searchPhones,
+      searchParams,
+      setPrice,
+      retrievePriceRange,
+    } = this.store;
+    this.searchPhones = searchPhones;
+    this.searchParams = searchParams;
+    this.setPrice = setPrice;
+    this.retrievePriceRange = retrievePriceRange;
+  }
   state = {
     search_value: "",
+    price: {
       min: "",
-      max: ""
+      max: "",
+    },
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { searchPhones } = this.props.store;
-    searchPhones(this.state.search_value, this.state.min, this.state.max);
+    this.searchPhones(this.state.search_value);
   };
   handleChange(e) {
     this.setState({ search_value: e.target.value });
   }
+  handleMinChange = (e) => {
+    let price_range = {
+      min: e.target.value,
+      max: this.state.price.max,
+    };
+    this.setState({ price: price_range });
+    this.setPrice(price_range);
+  };
 
-  handleMinChange(e) {
-    this.setState({ min: e.target.value });
-  }
-  handleMaxChange(e) {
-    this.setState({ max: e.target.value });
-  }
+  handleMaxChange = (e) => {
+    let price_range = {
+      min: this.state.price.min,
+      max: e.target.value,
+    };
+    this.setState({ price: price_range });
+    this.setPrice(price_range);
+  };
 
   render() {
-    const { searchParams } = this.props.store;
     return (
-      <div className="header-container row m-0 p-0 mb-lg-5" style={{  
-        backgroundImage: 'url(/src/image/screens-Image.png)',
-        backgroundPosition: 'right top',
-        backgroundSize: '20em 15em',
-        backgroundRepeat: 'no-repeat'
-      }}>
+      <div
+        className="header-container row m-0 p-0 mb-lg-5"
+        style={{
+          backgroundImage: "url(/src/image/screens-Image.png)",
+          backgroundPosition: "right top",
+          backgroundSize: "20em 15em",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <nav className="col-12 p-0 mb-4">
           <div className="row justify-content-center m-0">
             <div className="col-lg-6 col-md-6">
@@ -52,7 +79,7 @@ export default class Navbar extends Component {
                   <p className="text-left h2 text-uppercase font-weight-bold intro">
                     Shop our latest <br /> available stock here
                   </p>
-                  <p className="text-white">{searchParams}</p>
+                  <p className="text-white">{this.searchParams}</p>
                 </header>
                 <div className="col-12 pl-0">
                   <form onSubmit={this.handleSubmit}>
@@ -103,8 +130,8 @@ export default class Navbar extends Component {
                           name="min"
                           id="minPrice"
                           placeholder="Min"
-                          value={this.state.min}
                           onChange={this.handleMinChange.bind(this)}
+                          value={this.state.min}
                         />
                       </div>
                       <p className="h6 text-center">|</p>
@@ -115,8 +142,8 @@ export default class Navbar extends Component {
                           name="max"
                           id="maxPrice"
                           placeholder="Max"
-                          value={this.state.max}
                           onChange={this.handleMaxChange.bind(this)}
+                          value={this.state.max}
                         />
                       </div>
                     </form>

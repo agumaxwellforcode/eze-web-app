@@ -19,13 +19,13 @@ function searchToQueryparams(queryParameters) {
         queryParameters[i].toLowerCase().includes("a2") ||
         queryParameters[i].toLowerCase().includes("b1") ||
         queryParameters[i].toLowerCase().includes("b2") ||
-        queryParameters[i].toLowerCase().includes("c") ||
+        queryParameters[i].toLowerCase().includes("c")  ||
         queryParameters[i].toLowerCase().includes("c/b") ||
         queryParameters[i].toLowerCase().includes("c/d")
       ) {
         query.push("&condition=" + queryParameters[i]); // push the parameter to the list and attach the query key
       } else if (
-        queryParameters[i].toLowerCase().includes("64") ||
+        queryParameters[i].toLowerCase().includes("64")  ||
         queryParameters[i].toLowerCase().includes("128") ||
         queryParameters[i].toLowerCase().includes("256") ||
         queryParameters[i].toLowerCase().includes("512")
@@ -63,7 +63,7 @@ function priceToQueryParams(priceParameters = { max: "400", min: "100" }) {
       priceQuery.push("&min=" + priceParameters.min);
     } else if (priceParameters.max !== "" && priceParameters.min === "") {
       priceQuery.push("&max=" + priceParameters.max);
-      priceQuery.push("&max=1"); // Assigned $1 as none of the products is less than $1, preferably, the lowest price in the table can be returned and used instead
+      priceQuery.push("&min=1"); // Assigned $1 as none of the products is less than $1, preferably, the lowest price in the table can be returned and used instead
     } else {
       // If both are null/empty
       priceQuery = "";
@@ -90,7 +90,7 @@ export function buildUrl(
   let search_params = searchToQueryparams(queryParameters);
   let price_params = priceToQueryParams(priceParameters);
   let url =
-    "//eze-backend-api.herokuapp.com/api/iphones/buy?page=" +
+    "https://eze-backend-api.herokuapp.com/api/iphones/buy?page=" +
     page +
     "&limit=" +
     limit +

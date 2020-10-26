@@ -1,7 +1,5 @@
 import React from "react";
 import { observer } from "mobx-react";
-
-import Filter from "./Filter";
 import ProductsWrapper from "./ProductsWrapper";
 
 import "../css/main.css";
@@ -89,6 +87,7 @@ class Main extends React.Component {
                       type="checkbox"
                       className="form-check-input"
                       id="exampleCheck1"
+                      value="32GB"
                     />
                     <label className="form-check-label mt-1">32GB</label>
                   </div>
@@ -99,6 +98,7 @@ class Main extends React.Component {
                       type="checkbox"
                       className="form-check-input"
                       id="exampleCheck2"
+                      value="64GB"
                     />
                     <label className="form-check-label mt-1">64GB</label>
                   </div>
@@ -109,6 +109,7 @@ class Main extends React.Component {
                       type="checkbox"
                       className="form-check-input"
                       id="exampleCheck3"
+                      value="128GB"
                     />
                     <label className="form-check-label mt-1">128GB</label>
                   </div>
@@ -119,6 +120,7 @@ class Main extends React.Component {
                       type="checkbox"
                       className="form-check-input"
                       id="exampleCheck4"
+                      value="256GB"
                     />
                     <label className="form-check-label mt-1">256GB</label>
                   </div>
