@@ -64,7 +64,7 @@ export default class Navbar extends Component {
                           name="searchParams"
                           id="search"
                           placeholder="Enter search term (e.g iphone x, 128Gb or A1)"
-                          required
+                          // required
                           value={this.state.search_value}
                           onChange={this.handleChange.bind(this)}
                         ></input>
